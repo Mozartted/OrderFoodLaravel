@@ -20,4 +20,8 @@ class Product extends Model
         $this->hasMany('App\Color');
     }
 
+    public function shape(){
+        $this->hasMany('App\Shape');
+    }
+
 }

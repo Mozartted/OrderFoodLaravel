@@ -9,7 +9,15 @@
 namespace App;
 
 
-class Flavour
-{
+use Illuminate\Database\Eloquent\Model;
 
+class Flavour extends Model
+{
+    public function product(){
+        $this->hasMany('App\Product');
+    }
+
+    public function price(){
+        $this->belongsTo('App\Price');
+    }
 }

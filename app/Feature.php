@@ -16,4 +16,8 @@ class Feature extends Model
         return $this->belongsTo('App\Price');
     }
 
+    public function product(){
+        $this->hasMany('App\Product');
+    }
+
 }

@@ -19,5 +19,8 @@ class Price extends Model
         $this->hasMany('App\Feature');
     }
 
+    public function flavour(){
+        $this->hasMany('App\Flavour');
+    }
 
 }
