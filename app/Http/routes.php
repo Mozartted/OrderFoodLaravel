@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['uses' => 'ViewsController@home']);
+
+Route::get('/gallery', ['uses' => 'ViewsController@gallery']);
+
+Route::get('/service',['uses' => 'ViewsController@service']);
+
+Route::get('/about',['uses' => 'ViewsController@about']);
+
+Route::get('/contact',['uses' => 'ViewsController@service']);
+
+Route::get('/team',['uses' => 'ViewsController@team']);
+
