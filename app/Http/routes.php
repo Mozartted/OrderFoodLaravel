@@ -23,3 +23,10 @@ Route::get('/contact',['uses' => 'ViewsController@service']);
 
 Route::get('/team',['uses' => 'ViewsController@team']);
 
+Route::get('/administrator',['uses' => 'HomeController@dashboard']);
+
+Route::get('/login',['uses' => 'AuthLoginController@login']);
+
+//Route::auth();
+
+Route::get('/home', 'HomeController@index');

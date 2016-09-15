@@ -32,4 +32,5 @@ class ViewsController extends Controller
     public function team(){
         return view('sections.team');
     }
+
 }
