@@ -17,7 +17,5 @@ class Flavour extends Model
         $this->hasMany('App\Product');
     }
 
-    public function price(){
-        $this->belongsTo('App\Price');
-    }
+
 }

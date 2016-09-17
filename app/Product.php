@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $fillable=['product_name'];
+
     public function size(){
         $this->hasMany('App\Size');
     }
@@ -24,4 +24,7 @@ class Product extends Model
         $this->hasMany('App\Shape');
     }
 
+    public function price(){
+        $this->belongsTo('App\Price');
+    }
 }

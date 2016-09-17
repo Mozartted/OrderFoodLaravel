@@ -12,9 +12,6 @@ use Illuminate\Database\Eloquent\Model;
 class Feature extends Model
 {
 
-    public function price(){
-        return $this->belongsTo('App\Price');
-    }
 
     public function product(){
         $this->hasMany('App\Product');

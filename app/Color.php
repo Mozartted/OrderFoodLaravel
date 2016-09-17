@@ -12,7 +12,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Color extends Model
 {
-    protected $fillable=['name','date_of_birth','breed_id'];
+
+    protected $timestamps=false;
 
     public function products(){
         return $this->hasMany('App\Product');

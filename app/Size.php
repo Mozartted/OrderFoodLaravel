@@ -17,7 +17,4 @@ class Size extends Model
         return $this->hasMany('App\Product');
     }
 
-    public function price(){
-        return $this->belongsTo('App\Price');
-    }
 }

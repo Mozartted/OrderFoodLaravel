@@ -11,16 +11,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Price extends Model
 {
-    public function size(){
-        $this->belongsTo('App\Size');
-    }
+    protected $timestamps=false;
 
-    public function feature(){
-        $this->hasMany('App\Feature');
-    }
 
-    public function flavour(){
-        $this->hasMany('App\Flavour');
+    public function product(){
+        $this->hasMany('App\Products');
     }
 
 }
