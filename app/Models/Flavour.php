@@ -3,18 +3,19 @@
  * Created by PhpStorm.
  * User: mozart
  * Date: 9/13/16
- * Time: 4:22 PM
+ * Time: 4:50 PM
  */
 
-namespace App;
+namespace App\Models;
 
 
 use Illuminate\Database\Eloquent\Model;
 
-class Size extends Model
+class Flavour extends Model
 {
     public function product(){
-        return $this->hasMany('App\Product');
+        $this->hasMany('App\Models\Product');
     }
+
 
 }

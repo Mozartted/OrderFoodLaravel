@@ -19,8 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('user_group');
             $table->foreign('user_group')->references('id')->on('user_group');
-            $table->rememberToken();
-            $table->timestamps();
+
         });
 
     }

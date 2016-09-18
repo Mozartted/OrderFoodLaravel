@@ -5,17 +5,12 @@
  * Date: 9/13/16
  * Time: 4:50 PM
  */
-
-namespace App;
-
-
+namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class Flavour extends Model
+class Shape extends Model
 {
     public function product(){
-        $this->hasMany('App\Product');
+        $this->hasMany('App\Models\Product');
     }
-
-
 }
