@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use DB;
 
 class User extends Model implements AuthenticatableContract
 {
@@ -32,6 +33,27 @@ class User extends Model implements AuthenticatableContract
         'is_admin' => 'boolean',
     ];
 
+    public function usergroup(){
+        return $this->belongsTo('App\Models\UserGroup');
+    }
+
+    /**
+     * Determine if a user is an administrator level and should be allowed to create other user
+     *return boolean
+     */
+    public function isAdminlevel(){
+        $level=$this->user_group;
+        if($level==1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function userLevel(){
+        $group_level=$this->usergroup()->where('id','=',$this->user_group);
+        return $group_level;
+    }
 
 
 
