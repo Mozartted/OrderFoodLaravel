@@ -1,5 +1,5 @@
 <?php
-namespace App\Models;
+namespace App;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -8,7 +8,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use DB;
 
-class User extends Model implements AuthenticatableContract
+class User extends Model implements AuthenticableContract
 {
     use Authenticatable;
     /**
@@ -16,7 +16,8 @@ class User extends Model implements AuthenticatableContract
      *
      * @var array
      */
-    protected $fillable = [
+    public $timestamps=false;
+   protected $fillable = [
         'name', 'email', 'password',
     ];
 
@@ -34,7 +35,7 @@ class User extends Model implements AuthenticatableContract
     ];
 
     public function usergroup(){
-        return $this->belongsTo('App\Models\UserGroup');
+        return $this->belongsTo('App\UserGroup');
     }
 
     /**

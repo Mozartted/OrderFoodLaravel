@@ -9,7 +9,11 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class Post
+class Post extends Model
 {
+
+    public function comments(){
+        return $this->hasMany('App\Models\Comment');
+    }
 
 }

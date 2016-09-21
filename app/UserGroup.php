@@ -6,10 +6,14 @@
  * Time: 12:52 PM
  */
 
-namespace App\Models;
+namespace App;
 use Illuminate\Database\Eloquent\Model;
 
-class UserGroup
+class UserGroup extends Model
 {
     protected $table='user_group';
+
+    public function user(){
+        return $this->hasMany('App\User');
+    }
 }

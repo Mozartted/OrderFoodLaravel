@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Feature extends Model
 {
-
+    protected $timestamps=false;
 
     public function product(){
         $this->hasMany('App\Models\Product');

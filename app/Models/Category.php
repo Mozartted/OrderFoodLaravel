@@ -9,8 +9,12 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class Category
+class Category extends Model
 {
+    protected $timestamps=false;
     protected $table='categories';
 
+    public function galleria(){
+        return $this->belongsToMany('App\Models\Gallery','gallery_category','category_id','gallery_id');
+    }
 }

@@ -34,4 +34,5 @@ Route::group(['namespace' => 'Home'], function () {
 
 });
 
-Route::get('/login',['uses' => 'Auth\AuthLoginController@login']);
+Route::get('/login',['as'=>'login_pathh','uses' => 'Auth\AuthLoginController@login']);
+Route::post('/login',['as'=>'login_path','uses'=>'Auth\AuthLoginController@BeginSession']);

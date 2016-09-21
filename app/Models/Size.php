@@ -13,6 +13,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Size extends Model
 {
+    protected $timestamps=false;
+    
     public function product(){
         return $this->hasMany('App\Models\Product');
     }

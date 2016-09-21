@@ -11,7 +11,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-
+    protected $timestamps=false;
+    
     public function size(){
         $this->hasMany('App\Models\Size');
     }

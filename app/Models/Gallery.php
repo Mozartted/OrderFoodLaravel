@@ -11,5 +11,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Gallery
 {
+
     protected $table='gallery';
 }

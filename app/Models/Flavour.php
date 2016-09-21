@@ -13,6 +13,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Flavour extends Model
 {
+    protected $timestamps=false;
+
     public function product(){
         $this->hasMany('App\Models\Product');
     }
