@@ -26,8 +26,22 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         // $this->call(UsersTableSeeder::class);
-        foreach($this->seeders as $seederClass){
-            $this->call($seederClass);
+        foreach ($this->seeders as $seedClass) {
+
+            $this->call($seedClass);
         }
+    }
+
+    public function cleanDatabase()
+    {
+        // DB::statement('SET FOREIGN_KEY_CHECKS=0');
+
+        foreach ($this->tables as $table) {
+
+            DB::table($table)->truncate();
+        }
+
+        // DB::statement('SET FOREIGN_KEY_CHECKS=1');
+
     }
 }

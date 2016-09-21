@@ -16,13 +16,13 @@ class UserTableSeeder extends Seeder
         //
         $faker=Faker::create();
 
-        foreach(range(1,30) as $index){
+        foreach(range(1,5) as $index){
 
             User::create([
                 'name'=>$faker->firstName,
                 'email'=>$faker->email,
                 'password'=>bcrypt('secret'),
-                'user_group'=>$faker->numberBetween(0,3)
+                'user_group'=>$faker->numberBetween(1,2)
             ]);
 
         }
