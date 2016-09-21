@@ -13,7 +13,8 @@ class DatabaseSeeder extends Seeder
     ];
 
     protected $seeders=[
-        'UserTableSeeder'
+        'UserTableSeeder',
+        'UserGroupTableSeeder'
     ];
     /**
      * Run the database seeds.

@@ -22,7 +22,7 @@ class UserTableSeeder extends Seeder
                 'name'=>$faker->firstName,
                 'email'=>$faker->email,
                 'password'=>bcrypt('secret'),
-                'user_group'=>$faker->biasedNumberBetween(1,2),
+                'user_group'=>$faker->numberBetween(0,3)
             ]);
 
         }
