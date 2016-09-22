@@ -23,7 +23,7 @@ Route::group(['namespace' => 'Home'], function () {
 
     Route::get('/team',['uses' => 'ViewsController@team']);
 
-    Route::get('/administrator',['uses' => 'HomeController@dashboard']);
+    Route::get('/administrator',['as'=>'administrator','uses' => 'HomeController@dashboard']);
 
     Route::get('/login',['uses' => 'AuthLoginController@login']);
 
