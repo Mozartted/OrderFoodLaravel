@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3500649561">
+  <component name="DataSourceManagerImpl" format="xml" hash="2392427871">
     <data-source source="LOCAL" name="MySQL - rebirth@localhost" uuid="21e1ecbc-5ccb-4d80-bb27-4e7c44af2c2a">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
@@ -13,6 +13,13 @@
         <property name="characterSetResults" value="utf8" />
         <property name="yearIsDateType" value="false" />
       </driver-properties>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="SQLite -" uuid="4d0a3726-f7fd-4eb4-acc0-d27b94e2226c">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/storage/rebirth.sqlite</jdbc-url>
       <libraries />
     </data-source>
   </component>

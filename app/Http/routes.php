@@ -23,9 +23,9 @@ Route::group(['namespace' => 'Home'], function () {
 
     Route::get('/team',['uses' => 'ViewsController@team']);
 
+    Route::get('/login',['uses' => 'AuthLoginController@login']);
     Route::get('/administrator',['as'=>'administrator','uses' => 'HomeController@dashboard']);
 
-    Route::get('/login',['uses' => 'AuthLoginController@login']);
 
 //Route::auth();
 
@@ -36,3 +36,9 @@ Route::group(['namespace' => 'Home'], function () {
 
 Route::get('/login',['as'=>'login_pathh','uses' => 'Auth\AuthLoginController@login']);
 Route::post('/login',['as'=>'login_path','uses'=>'Auth\AuthLoginController@BeginSession']);
+Route::get('/logout',['uses' => 'Auth\AuthLoginController@logout']);
+
+Route::group(['prefix'=>'administrator','middleware'=>'auth'],function(){
+
+    Route::get('/product',['as'=>'product_admin','uses'=>'HomeController@dashboard']);
+});

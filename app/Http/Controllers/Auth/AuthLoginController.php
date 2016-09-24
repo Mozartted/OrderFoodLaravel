@@ -12,10 +12,6 @@ use Illuminate\Support\Facades\Auth;
 class AuthLoginController extends Controller
 {
 
-    public function _construct(){
-        $this->middleware('guest', ['except' => 'logout']);
-    }
-
     //
     private $service=1;
     public function login(){
@@ -25,9 +21,16 @@ class AuthLoginController extends Controller
     public function BeginSession(CreateSessionRequest $request){
         $credentials=$request->only('email','password');
 
-        if(Auth::attempt($credentials))
+        if(Auth::attempt($credentials,$request->has('remember')))
             return redirect()->route('administrator');
         else
             return redirect()->route('login_pathh')->with('error_login','could not log you in');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return redirect('/');
     }
 }
