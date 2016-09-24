@@ -24,7 +24,7 @@ Route::group(['namespace' => 'Home'], function () {
     Route::get('/team',['uses' => 'ViewsController@team']);
 
     Route::get('/login',['uses' => 'AuthLoginController@login']);
-    Route::get('/administrator',['as'=>'administrator','uses' => 'HomeController@dashboard']);
+
 
 
 //Route::auth();
@@ -38,7 +38,13 @@ Route::get('/login',['as'=>'login_pathh','uses' => 'Auth\AuthLoginController@log
 Route::post('/login',['as'=>'login_path','uses'=>'Auth\AuthLoginController@BeginSession']);
 Route::get('/logout',['uses' => 'Auth\AuthLoginController@logout']);
 
-Route::group(['prefix'=>'administrator','middleware'=>'auth'],function(){
-
-    Route::get('/product',['as'=>'product_admin','uses'=>'HomeController@dashboard']);
+Route::group(['prefix'=>'administrator','namespace'=>'Admin','middleware'=>'auth'],function(){
+    Route::get('/',['as'=>'administrator','uses' => 'DashboardController@dashboard']);
+    Route::get('/users',['as'=>'users_admin','uses'=>'DashboardController@users_view']);
+    Route::get('/product',['as'=>'product_admin','uses'=>'DashboardController@product_view']);
+    Route::get('/features',['as'=>'features_admin','uses'=>'DashboardController@features_view']);
+    Route::get('/orders',['as'=>'orders_admin','uses'=>'DashboardController@orders_view']);
+    Route::get('/blog',['as'=>'blog_admin','uses'=>'DashboardController@blog_view']);
+    Route::get('/messages',['as'=>'messages_admin','uses'=>'DashboardController@messages_view']);
+    Route::get('/forum',['as'=>'forum_admin','uses'=>'DashboardController@forum_view']);
 });
