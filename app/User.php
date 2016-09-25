@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-use DB;
+
 
 class User extends Model implements AuthenticableContract
 {
@@ -16,6 +16,8 @@ class User extends Model implements AuthenticableContract
      *
      * @var array
      */
+
+
     public $timestamps=false;
    protected $fillable = [
         'name', 'email', 'password',
@@ -30,12 +32,10 @@ class User extends Model implements AuthenticableContract
         'password', 'remember_token',
     ];
 
-    protected $casts = [
-        'is_admin' => 'boolean',
-    ];
+
 
     public function usergroup(){
-        return $this->belongsTo('App\UserGroup');
+        return $this->belongsTo('App\UserGroup','user_group');
     }
 
     /**

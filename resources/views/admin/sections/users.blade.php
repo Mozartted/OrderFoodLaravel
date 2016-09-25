@@ -40,7 +40,7 @@
                                     </thead>
                                     <tbody>
 
-                                    @if($users->count())
+
                                         @foreach($users as $user)
 
                                             <tr>
@@ -51,33 +51,9 @@
                                             </tr>
 
 
-                                            @endforeach
-                                    @endif
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Henry</td>
+                                        @endforeach
 
-                                        <td><span class="label label-sm label-success">Approved</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>John</td>
 
-                                        <td><span class="label label-sm label-info">Pending</span></td>
-                                        <td><span><a href="">Edit</a></span><span><a href="">Delete</a></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Larry</td>
-
-                                        <td><span class="label label-sm label-warning">Suspended</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Lahm</td>
-
-                                        <td><span class="label label-sm label-danger">Blocked</span></td>
-                                    </tr>
                                     </tbody>
                                 </table>
                             </div>

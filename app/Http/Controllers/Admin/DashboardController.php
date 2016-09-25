@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 use App\User as Users;
 
@@ -9,10 +10,10 @@ use App\Http\Requests;
 
 class DashboardController extends Controller
 {
-    private $userAll;
+
 
     public function _construct(){
-        $this->userAll=Users::all()->jsonSerialize();
+
     }
 
     public function dashboard()
@@ -22,8 +23,8 @@ class DashboardController extends Controller
 
     public function users_view()
     {
-        $users=$this->userAll;
-        return view('admin.sections.users')->with('users',$users);
+
+        return view('admin.sections.users',['users'=>User::all()]);
     }
 
     public function product_view()
