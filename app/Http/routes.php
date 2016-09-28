@@ -47,5 +47,5 @@ Route::group(['prefix'=>'administrator','namespace'=>'Admin','middleware'=>'auth
     Route::get('/blog',['as'=>'blog_admin','uses'=>'DashboardController@blog_view']);
     Route::get('/messages',['as'=>'messages_admin','uses'=>'DashboardController@messages_view']);
     Route::get('/forum',['as'=>'forum_admin','uses'=>'DashboardController@forum_view']);
-    Route::delete('/user/{id}/delete',['as'=>'user.delete','uses'=>'DashboardController@forum_view']);
+    Route::delete('/user/{id}/delete',['as'=>'user.delete','uses'=>'UserController@deleted']);
 });

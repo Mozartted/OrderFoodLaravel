@@ -54,7 +54,7 @@
                                                 <td><span class="label label-sm label-success">{!! $user->usergroup->name !!}</span></td>
                                                 @if(Auth::user()->usergroup->name=='Admin')
                                                 <td><a href="{{url('users/'.$user->id.'edit')}}">Edit</a> | {!! Form::open(['method' => 'DELETE', 'route' => ['user.delete', $user->id]]) !!}
-                                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}  }}
+                                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                                                     {!! Form::close()  !!}</td>
                                                 @endif
                                             </tr>
