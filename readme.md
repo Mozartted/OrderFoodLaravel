@@ -1,6 +1,6 @@
 RebirthLaravel
 
-A cake ordering site structure construct constructed with laravel
+A cake ordering site structure constructed with laravel
 
 ## License
 

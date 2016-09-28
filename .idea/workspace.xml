@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce27ecb8-4ae8-4e11-816e-2eae819e92e7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RebirthLaravel.iws" />
@@ -108,11 +109,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="users.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="users.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/sections/users.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.02739726">
-              <caret line="56" column="113" selection-start-line="56" selection-start-column="113" selection-end-line="56" selection-end-column="113" />
+            <state vertical-scroll-proportion="-11.52">
+              <caret line="73" column="56" selection-start-line="73" selection-start-column="56" selection-end-line="73" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readme.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/readme.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.054700855">
+              <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -205,21 +216,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/dbc1490e/4d0a3726-f7fd-4eb4-acc0-d27b94e2226c/..users">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -280,7 +276,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/layouts/partials/nav_topbar.blade.php" />
-        <option value="$PROJECT_DIR$/readme.md" />
         <option value="&lt;f298caed-083e-4b78-8ea5-c01ca55148eb&gt;/var/www/html/rebirthLaravel/public/index.php" />
         <option value="&lt;f298caed-083e-4b78-8ea5-c01ca55148eb&gt;/var/www/html/rebirthLaravel/public/.htaccess" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthLoginController.php" />
@@ -291,6 +286,7 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/sections/users.blade.php" />
+        <option value="$PROJECT_DIR$/readme.md" />
       </list>
     </option>
   </component>
@@ -764,7 +760,13 @@
       <option name="project" value="LOCAL" />
       <updated>1475076683846</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Creating administrator user creation and delete sections">
+      <created>1475076761286</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1475076761286</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1042,13 +1044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/agency.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1255,8 +1250,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/sections/users.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02739726">
-          <caret line="56" column="113" selection-start-line="56" selection-start-column="113" selection-end-line="56" selection-end-column="113" />
+        <state vertical-scroll-proportion="-11.52">
+          <caret line="73" column="56" selection-start-line="73" selection-start-column="56" selection-end-line="73" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.054700855">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
           <folding />
         </state>
       </provider>
