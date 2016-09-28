@@ -15,17 +15,18 @@
 
             </div>
             <ul id="generalTab" class="nav nav-tabs responsive">
-                <li class="active"><a href="#alert-tab" data-toggle="tab">Products</a></li>
-                <li><a href="#note-tab" data-toggle="tab">Add Products</a></li>
-                <li><a href="#label-badge-tab" data-toggle="tab">Edit Products</a></li>
-                <li><a href="#pagination-tab" data-toggle="tab">Delete Product</a></li>
+                <li class="active"><a href="#alert-tab" data-toggle="tab">Users</a></li>
+                @if(Auth::user()->usergroup->name=='Admin')
+                <li><a href="#note-tab" data-toggle="tab">Add User</a></li>
+                @endif
+
 
             </ul>
             <div id="generalTabContent" class="tab-content responsive">
                 <div id="alert-tab" class="tab-pane fade in active">
                     <div class="row">
                         <div class="panel panel-green">
-                            <div class="panel-heading">Bordered Table</div>
+                            <div class="panel-heading">Users</div>
                             <div class="panel-body">
                                 <!--Displays the users and their levels Admin or writer-->
 
@@ -36,6 +37,9 @@
                                         <th>Username</th>
 
                                         <th>Status</th>
+                                        @if(Auth::user()->usergroup->name=='Admin')
+                                            <th>Edit/Delete</th>
+                                        @endif
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -48,6 +52,11 @@
                                                 <td>{!! $user->name !!}</td>
 
                                                 <td><span class="label label-sm label-success">{!! $user->usergroup->name !!}</span></td>
+                                                @if(Auth::user()->usergroup->name=='Admin')
+                                                <td><a href="{{url('users/'.$user->id.'edit')}}">Edit</a> | {!! Form::open(['method' => 'DELETE', 'route' => ['user.delete', $user->id]]) !!}
+                                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}  }}
+                                                    {!! Form::close()  !!}</td>
+                                                @endif
                                             </tr>
 
 

@@ -21,8 +21,15 @@ class AuthLoginController extends Controller
     public function BeginSession(CreateSessionRequest $request){
         $credentials=$request->only('email','password');
 
-        if(Auth::attempt($credentials,$request->has('remember')))
-            return redirect()->route('administrator');
+        if(Auth::attempt($credentials,$request->has('remember'))){
+            if(Auth::user()->usergroup->name=='ForumMember'){
+                Auth::logout();
+                return redirect('/');
+            }else{
+                return redirect()->route('administrator');
+            }
+
+        }
         else
             return redirect()->route('login_pathh')->with('error_login','could not log you in');
     }
