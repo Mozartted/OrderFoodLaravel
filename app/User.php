@@ -20,7 +20,7 @@ class User extends Model implements AuthenticableContract
 
     public $timestamps=false;
    protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','user_group'
     ];
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\View\Factory as ViewFactory;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -11,9 +12,9 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(ViewFactory $view)
     {
-        //
+        $view->composer('admin.sections.edit','App\Http\Views\Composers\UserEditComposer');
     }
 
     /**

@@ -7,24 +7,26 @@ use Illuminate\Http\Request;
 use App\User as Users;
 
 use App\Http\Requests;
+use App\UserGroup;
 
 class DashboardController extends Controller
 {
 
+    protected $usergroup;
 
-    public function _construct(){
-
+    public function _construct(UserGroup $userGroup){
+        $this->usergroup=$userGroup;
     }
 
     public function dashboard()
     {
-        return view('admin.sections.dashboard');
+        return view('admin.sections.dashboard')->with('user_group',UserGroup::all());
     }
 
     public function users_view()
     {
 
-        return view('admin.sections.users',['users'=>User::all()]);
+        return view('admin.sections.users',['users'=>User::all(),'user_group'=>UserGroup::lists('name', 'id')]);
     }
 
     public function product_view()
@@ -61,6 +63,7 @@ class DashboardController extends Controller
     {
         return view('admin.sections.forum');
     }
+
 
 
 }

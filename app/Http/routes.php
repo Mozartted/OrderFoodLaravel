@@ -48,4 +48,7 @@ Route::group(['prefix'=>'administrator','namespace'=>'Admin','middleware'=>'auth
     Route::get('/messages',['as'=>'messages_admin','uses'=>'DashboardController@messages_view']);
     Route::get('/forum',['as'=>'forum_admin','uses'=>'DashboardController@forum_view']);
     Route::delete('/user/{id}/delete',['as'=>'user.delete','uses'=>'UserController@deleted']);
+    Route::post('/user/create/',['as'=>'new_user','uses'=>'UserController@creating']);
+    Route::get('/user/{user}/edit',['as'=>'edit', 'uses'=>'UserController@edit']);
+    Route::put('/user/{user}/update',['as'=>'update', 'uses'=>'UserController@update']);
 });
