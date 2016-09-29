@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Price extends Model
 {
-    protected $timestamps=false;
+    public $timestamps=false;
 
 
     public function product(){

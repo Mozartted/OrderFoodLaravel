@@ -8,6 +8,8 @@ use App\User as Users;
 
 use App\Http\Requests;
 use App\UserGroup;
+use App\Models\Product;
+use App\Models\Price;
 
 class DashboardController extends Controller
 {
@@ -31,7 +33,7 @@ class DashboardController extends Controller
 
     public function product_view()
     {
-        return view('admin.sections.product');
+        return view('admin.sections.product',['products'=>Product::all(),'price'=>Price::lists('amount', 'id')]);
     }
 
     public function order_view()

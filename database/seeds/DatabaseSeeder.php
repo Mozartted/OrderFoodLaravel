@@ -9,12 +9,13 @@ class DatabaseSeeder extends Seeder
 {
 
     protected $tables=[
-        'users','user_group'
+        'users','user_group','prices'
     ];
 
     protected $seeders=[
         'UserTableSeeder',
-        'UserGroupTableSeeder'
+        'UserGroupTableSeeder',
+        'PriceTableSeeder',
     ];
     /**
      * Run the database seeds.

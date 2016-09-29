@@ -11,21 +11,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $timestamps=false;
+    public $timestamps=false;
+    protected $fillable = [
+        'name','price_id'
+    ];
     
     public function size(){
-        $this->hasMany('App\Models\Size');
+        return $this->hasMany('App\Models\Size');
     }
 
     public function color(){
-        $this->hasMany('App\Models\Color');
+        return $this->hasMany('App\Models\Color');
     }
 
     public function shape(){
-        $this->hasMany('App\Models\Shape');
+        return $this->hasMany('App\Models\Shape');
     }
 
     public function price(){
-        $this->belongsTo('App\Models\Price');
+        return $this->belongsTo('App\Models\Price','price_id');
     }
 }
