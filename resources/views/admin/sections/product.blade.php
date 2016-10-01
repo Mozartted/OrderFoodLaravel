@@ -82,11 +82,18 @@
                                                     <i class="fa fa-user"></i>
                                                     {!!Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Enter Product\'s name'])!!}</div>
                                             </div>
-                                            >
+
                                             {!! Form::label('price_id', 'Price') !!}
                                             <div class="form-controls">
                                                 {!! Form::select('price_id', $price, null, ['class' =>
                                                 'form-control']) !!}
+                                            </div>
+
+                                            <div class="form-controls">
+                                                @foreach ($sizes as $size)
+                                                    {!! Form::checkbox('size[]', $size) !!}
+                                                    {!! Form::label('size[]', $size) !!} <br>
+                                                @endforeach
                                             </div>
                                         </div>
                                         <div class="form-actions text-right pal">

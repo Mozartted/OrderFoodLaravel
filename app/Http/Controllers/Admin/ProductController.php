@@ -19,6 +19,7 @@ class ProductController extends Controller
 
     protected function creating(Request $requests)
     {
+
         Product::create([
             'name' => $requests['name'],
             'price_id' => $requests['price_id'],

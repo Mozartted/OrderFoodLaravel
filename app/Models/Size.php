@@ -16,7 +16,8 @@ class Size extends Model
     public $timestamps=false;
     
     public function product(){
-        return $this->hasMany('App\Models\Product');
+        return $this->hasMany('App\Models\Product','products_sizes','size_id','product_id');
+
     }
 
 }
