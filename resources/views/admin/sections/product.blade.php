@@ -36,6 +36,7 @@
                                                 <th>#</th>
                                                 <th>Products</th>
                                                 <th>Price</th>
+                                                <th>sizes</th>
                                                 @if(Auth::user()->usergroup->name=='Admin')
                                                     <th>Edit/Delete</th>
                                                 @endif
@@ -49,8 +50,13 @@
                                                 <tr>
                                                     <td>{!! $product->id !!}</td>
                                                     <td>{!! $product->name !!}</td>
-
                                                     <td><span class="label label-sm label-success">{!! $product->price->amount !!}</span></td>
+                                                    <td>
+                                                    @foreach($product->size as $pro)
+                                                        {!! $pro->name !!}<p>Inches</p><br>
+                                                    @endforeach
+                                                        </td>
+
                                                     @if(Auth::user()->usergroup->name=='Admin')
                                                         <td><a href="{{url('administrator/product/'.$product->id.'/edit')}}">Edit</a> | {!! Form::open(['method' => 'DELETE', 'route' => ['product.delete', $product->id]]) !!}
                                                             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
@@ -91,8 +97,8 @@
 
                                             <div class="form-controls">
                                                 @foreach ($sizes as $size)
-                                                    {!! Form::checkbox('size[]', $size) !!}
-                                                    {!! Form::label('size[]', $size) !!} <br>
+                                                    {!! Form::checkbox('id[]',$size->id) !!}
+                                                    {!! Form::label('id', $size->name) !!} <br>
                                                 @endforeach
                                             </div>
                                         </div>

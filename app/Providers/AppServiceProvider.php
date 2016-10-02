@@ -15,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(ViewFactory $view)
     {
         $view->composer('admin.sections.edit','App\Http\Views\Composers\UserEditComposer');
+        $view->comp0ser('admin.sections.product_edit','App\Http\Views\Composer\ProductEditComposer');
     }
 
     /**

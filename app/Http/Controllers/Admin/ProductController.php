@@ -20,10 +20,16 @@ class ProductController extends Controller
     protected function creating(Request $requests)
     {
 
-        Product::create([
-            'name' => $requests['name'],
-            'price_id' => $requests['price_id'],
-        ]);
+        $product=new Product();
+        $product->name=$requests['name'];
+        $product->price_id=$requests['price_id'];
+
+        $sizes=$requests['id'];
+        $product->save();
+
+        $product->size()->attach($sizes);
+
+
         return redirect('administrator/product')->withSuccess("Product created Successfully");
     }
 

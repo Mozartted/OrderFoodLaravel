@@ -34,7 +34,7 @@ class DashboardController extends Controller
 
     public function product_view()
     {
-        return view('admin.sections.product',['products'=>Product::all(),'price'=>Price::lists('amount', 'id'),'sizes'=>Size::lists('name','id')]);
+        return view('admin.sections.product',['products'=>Product::all(),'price'=>Price::lists('amount', 'id'),'sizes'=>Size::all()]);
     }
 
     public function order_view()
