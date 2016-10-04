@@ -43,16 +43,55 @@ Route::group(['prefix'=>'administrator','namespace'=>'Admin','middleware'=>'auth
     Route::get('/users',['as'=>'users_admin','uses'=>'DashboardController@users_view']);
     Route::get('/product',['as'=>'product_admin','uses'=>'DashboardController@product_view']);
     Route::get('/features',['as'=>'features_admin','uses'=>'DashboardController@features_view']);
+    Route::get('/shapes',['as'=>'shapes_admin','uses'=>'DashboardController@shapes_view']);
+    Route::get('/flavours',['as'=>'flavours_admin','uses'=>'DashboardController@flavours_view']);
+    Route::get('/icings',['as'=>'icings_admin','uses'=>'DashboardController@icings_view']);
+    Route::get('/prices',['as'=>'prices_admin','uses'=>'DashboardController@prices_view']);
+    Route::get('/sizes',['as'=>'sizes_admin','uses'=>'DashboardController@sizes_view']);
+
     Route::get('/orders',['as'=>'orders_admin','uses'=>'DashboardController@orders_view']);
     Route::get('/blog',['as'=>'blog_admin','uses'=>'DashboardController@blog_view']);
     Route::get('/messages',['as'=>'messages_admin','uses'=>'DashboardController@messages_view']);
     Route::get('/forum',['as'=>'forum_admin','uses'=>'DashboardController@forum_view']);
+
     Route::delete('/user/{id}/delete',['as'=>'user.delete','uses'=>'UserController@deleted']);
     Route::post('/user/create/',['as'=>'new_user','uses'=>'UserController@creating']);
     Route::get('/user/{user}/edit',['as'=>'edit', 'uses'=>'UserController@edit']);
     Route::put('/user/{user}/update',['as'=>'update', 'uses'=>'UserController@update']);
+
     Route::post('/product/create/',['as'=>'new_product','uses'=>'ProductController@creating']);
     Route::delete('/product/{id}/delete',['as'=>'product.delete','uses'=>'ProductController@deleted']);
     Route::get('/product/{product}/edit',['as'=>'edit', 'uses'=>'ProductController@edit']);
     Route::put('/product/{product}/update',['as'=>'update', 'uses'=>'ProductController@update']);
+
+    Route::post('/feature/create/',['as'=>'new_feature','uses'=>'FeatureController@creating']);
+    Route::delete('/feature/{id}/delete',['as'=>'feature.delete','uses'=>'FeatureController@deleted']);
+    Route::get('/feature/{feature}/edit',['as'=>'edit', 'uses'=>'FeatureController@edit']);
+    Route::put('/feature/{feature}/update',['as'=>'update', 'uses'=>'FeatureController@update']);
+
+    Route::post('/shape/create/',['as'=>'new_shape','uses'=>'ShapeController@creating']);
+    Route::delete('/shape/{id}/delete',['as'=>'shape.delete','uses'=>'ShapeController@deleted']);
+    Route::get('/shape/{shape}/edit',['as'=>'edit', 'uses'=>'ShapeController@edit']);
+    Route::put('/shape/{shape}/update',['as'=>'update', 'uses'=>'ShapeController@update']);
+
+    Route::post('/flavour/create/',['as'=>'new_flavour','uses'=>'FlavourController@creating']);
+    Route::delete('/flavour/{id}/delete',['as'=>'flavour.delete','uses'=>'FlavourController@deleted']);
+    Route::get('/flavour/{flavour}/edit',['as'=>'edit', 'uses'=>'FlavourController@edit']);
+    Route::put('/flavour/{flavour}/update',['as'=>'update', 'uses'=>'FlavourController@update']);
+
+    Route::post('/icing/create/',['as'=>'new_icing','uses'=>'IcingController@creating']);
+    Route::delete('/icing/{id}/delete',['as'=>'icing.delete','uses'=>'IcingController@deleted']);
+    Route::get('/icing/{icing}/edit',['as'=>'edit', 'uses'=>'IcingController@edit']);
+    Route::put('/icing/{icing}/update',['as'=>'update', 'uses'=>'IcingController@update']);
+
+    Route::post('/price/create/',['as'=>'new_price','uses'=>'PriceController@creating']);
+    Route::delete('/price/{id}/delete',['as'=>'price.delete','uses'=>'PriceController@deleted']);
+    Route::get('/price/{price}/edit',['as'=>'edit', 'uses'=>'PriceController@edit']);
+    Route::put('/price/{price}/update',['as'=>'update', 'uses'=>'PriceController@update']);
+
+    Route::post('/size/create/',['as'=>'new_size','uses'=>'SizeController@creating']);
+    Route::delete('/size/{id}/delete',['as'=>'size.delete','uses'=>'SizeController@deleted']);
+    Route::get('/size/{size}/edit',['as'=>'edit', 'uses'=>'SizeController@edit']);
+    Route::put('/size/{size}/update',['as'=>'update', 'uses'=>'SizeController@update']);
+
 });

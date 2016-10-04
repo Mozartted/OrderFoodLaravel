@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
+use App\Models\Flavour;
+use App\Models\Icing;
+use App\Models\Shape;
 use App\User;
 use Illuminate\Http\Request;
 use App\User as Users;
@@ -50,7 +53,32 @@ class DashboardController extends Controller
 
     public function features_view()
     {
-        return view('admin.sections.features',['features'=>Feature::all()]);
+        return view('admin.sections.features',['features'=>Feature::all(),'featMenu'=>true]);
+    }
+
+    public function flavours_view()
+    {
+        return view('admin.sections.flavours',['flavours'=>Flavour::all(),'featMenu'=>true]);
+    }
+
+    public function shapes_view()
+    {
+        return view('admin.sections.shape',['shapes'=>Shape::all(),'featMenu'=>true]);
+    }
+
+    public function icings_view()
+    {
+        return view('admin.sections.icing',['icings'=>Icing::all(),'featMenu'=>true]);
+    }
+
+    public function prices_view()
+    {
+        return view('admin.sections.prices',['prices'=>Price::all(),'featMenu'=>true]);
+    }
+
+    public function sizes_view()
+    {
+        return view('admin.sections.size',['sizes'=>Size::all(),'featMenu'=>true]);
     }
 
     public function blog_view()

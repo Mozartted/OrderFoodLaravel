@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="page-wrapper">
-        @include('admin.sections.partials.users_header',['header'=>'Blog'])
+        @include('admin.sections.partials.users_header',['header'=>'Icing'])
         <div class="page-content">
             <div id="tab-general">
                 <div class="row mbl">
@@ -15,9 +15,9 @@
 
                     </div>
                     <ul id="generalTab" class="nav nav-tabs responsive">
-                        <li class="active"><a href="#alert-tab" data-toggle="tab">Features</a></li>
+                        <li class="active"><a href="#alert-tab" data-toggle="tab">Icing</a></li>
                         @if(Auth::user()->usergroup->name=='Admin')
-                            <li><a href="#note-tab" data-toggle="tab">Add Shapes</a></li>
+                            <li><a href="#note-tab" data-toggle="tab">Add Icings</a></li>
                         @endif
 
 
@@ -26,7 +26,7 @@
                         <div id="alert-tab" class="tab-pane fade in active">
                             <div class="row">
                                 <div class="panel panel-green">
-                                    <div class="panel-heading">Shapes</div>
+                                    <div class="panel-heading">Icings</div>
                                     <div class="panel-body">
                                         <!--Displays the users and their levels Admin or writer-->
 
@@ -34,7 +34,7 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Shape</th>
+                                                <th>Icing</th>
                                                 @if(Auth::user()->usergroup->name=='Admin')
                                                     <th>Edit/Delete</th>
                                                 @endif
@@ -43,14 +43,14 @@
                                             <tbody>
 
 
-                                            @foreach($shapes as $shape)
+                                            @foreach($icings as $icing)
 
                                                 <tr>
-                                                    <td>{!! $shape->id !!}</td>
-                                                    <td>{!! $shape->name !!}</td>
+                                                    <td>{!! $icing->id !!}</td>
+                                                    <td>{!! $icing->name !!}</td>
 
                                                     @if(Auth::user()->usergroup->name=='Admin')
-                                                        <td><a href="{{url('administrator/shape/'.$shape->id.'/edit')}}">Edit</a> | {!! Form::open(['method' => 'DELETE', 'route' => ['shape.delete', $shape->id]]) !!}
+                                                        <td><a href="{{url('administrator/icing/'.$icing->id.'/edit')}}">Edit</a> | {!! Form::open(['method' => 'DELETE', 'route' => ['icing.delete', $icing->id]]) !!}
                                                             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                                                             {!! Form::close()  !!}</td>
                                                     @endif
@@ -73,7 +73,7 @@
                                         <div class="panel-heading">
                                             Create A Shape</div>
                                         <div class="panel-body pan">
-                                            {!! Form::open(['route'=>'new_shape']) !!}
+                                            {!! Form::open(['route'=>'new_icing']) !!}
                                             <div class="form-body pal">
                                                 <div class="form-group">
                                                     <div class="input-icon right">

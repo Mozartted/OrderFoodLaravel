@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="page-wrapper">
-        @include('admin.sections.partials.users_header')
+        @include('admin.sections.partials.users_header',['header'=>'Features'])
         <div class="page-content">
             <div id="tab-general">
                 <div class="row mbl">
@@ -15,9 +15,9 @@
 
                     </div>
                     <ul id="generalTab" class="nav nav-tabs responsive">
-                        <li class="active"><a href="#alert-tab" data-toggle="tab">Users</a></li>
+                        <li class="active"><a href="#alert-tab" data-toggle="tab">Features</a></li>
                         @if(Auth::user()->usergroup->name=='Admin')
-                            <li><a href="#note-tab" data-toggle="tab">Add User</a></li>
+                            <li><a href="#note-tab" data-toggle="tab">Add Features</a></li>
                         @endif
 
 
@@ -26,7 +26,7 @@
                         <div id="alert-tab" class="tab-pane fade in active">
                             <div class="row">
                                 <div class="panel panel-green">
-                                    <div class="panel-heading">Users</div>
+                                    <div class="panel-heading">Features</div>
                                     <div class="panel-body">
                                         <!--Displays the users and their levels Admin or writer-->
 
@@ -34,9 +34,9 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Username</th>
+                                                <th>Feature</th>
 
-                                                <th>Status</th>
+                                                <th>Percent</th>
                                                 @if(Auth::user()->usergroup->name=='Admin')
                                                     <th>Edit/Delete</th>
                                                 @endif
@@ -75,7 +75,7 @@
                                     <div class="panel-heading">
                                         Create A Feature</div>
                                     <div class="panel-body pan">
-                                        {!! Form::open(['route'=>'new_user']) !!}
+                                        {!! Form::open(['route'=>'new_feature']) !!}
                                         <div class="form-body pal">
                                             <div class="form-group">
                                                 <div class="input-icon right">
@@ -85,13 +85,9 @@
                                             <div class="form-group">
                                                 <div class="input-icon right">
                                                     <i class="fa fa-envelope"></i>
-                                                    {!!Form::integerValue('percent', null, ['class' => 'form-control', 'placeholder' => 'Enter email'])!!}</div>
+                                                    {!!Form::number('percent', null, ['class' => 'form-control', 'placeholder' => 'percent'])!!}</div>
                                             </div>
                                             <div class="form-group">
-                                                <div class="input-icon right">
-                                                    <i class="fa fa-lock"></i>
-                                                    {!!Form::password('password', ['class' => 'form-control', 'placeholder' => 'Enter password'])!!}</div>
-                                            </div>
 
                                         </div>
                                         <div class="form-actions text-right pal">
@@ -286,9 +282,6 @@
         </div>
         <!--END CONTENT-->
         <!--BEGIN FOOTER-->
-        <div id="footer">
-            <div class="copyright">
-                <a href="http://themifycloud.com">2014 © KAdmin Responsive Multi-Purpose Template</a></div>
-        </div>
+            @include('admin.sections.partials.footer')
     </div>
 @endsection

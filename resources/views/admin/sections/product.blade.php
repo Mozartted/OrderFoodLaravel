@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="page-wrapper">
-        @include('admin.sections.partials.users_header')
+        @include('admin.sections.partials.users_header',['header'=>'Products'])
         <div class="page-content">
             <div id="tab-general">
                 <div class="row mbl">
@@ -50,7 +50,12 @@
                                                 <tr>
                                                     <td>{!! $product->id !!}</td>
                                                     <td>{!! $product->name !!}</td>
-                                                    <td><span class="label label-sm label-success">{!! $product->price->amount !!}</span></td>
+                                                    @if(isset($product->price->amount))
+                                                        <td><span class="label label-sm label-success">{!! $product->price->amount !!}</span></td>
+
+                                                        @else
+                                                        <td><span class="label label-sm label-success">Edit the price please</span></td>
+                                                    @endif
                                                     <td>
                                                     @foreach($product->size as $pro)
                                                         {!! $pro->name !!}<p>Inches</p><br>
@@ -121,9 +126,6 @@
         </div>
         <!--END CONTENT-->
         <!--BEGIN FOOTER-->
-        <div id="footer">
-            <div class="copyright">
-                <a href="http://themifycloud.com">2014 © Rebirth Concepts</a></div>
-        </div>
+        @include('admin.sections.partials.footer')
     </div>
 @endsection

@@ -48,7 +48,15 @@
 
     <div id="wrapper">
         <!--BEGIN SIDEBAR MENU-->
-        @include('admin.layouts.partials.nav_sidebar')
+        @if(isset($featMenu))
+            @if($featMenu==true)
+                @include('admin.layouts.partials.nav_sidebar_features')
+                @else
+                @include('admin.layouts.partials.nav_sidebar')
+            @endif
+            @else
+            @include('admin.layouts.partials.nav_sidebar')
+        @endif
 
         @if (Session::has('message'))
             <div class="alert alert-success">

@@ -56,10 +56,11 @@ class ProductController extends Controller
         $product->name=$requests['name'];
         $product->price_id=$requests['price_id'];
 
+
         $sizes=$requests['id'];
         $product->save();
 
-        $product->size()->sync($sizes);
+        $product->size()->sync((array) $sizes);
         return redirect('/administrator/product')
             ->withSuccess('Product has been updated.');
     }

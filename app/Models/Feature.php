@@ -13,6 +13,8 @@ class Feature extends Model
 {
     public $timestamps=false;
 
+    protected $fillable=['name','percent'];
+
     public function product(){
         $this->hasMany('App\Models\Product');
     }

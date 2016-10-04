@@ -12,6 +12,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Icing extends Model
 {
+    public $timestamps=false;
+    protected $fillable=['name'];
+
     public function product(){
         $this->hasMany('App\Models\Product');
     }

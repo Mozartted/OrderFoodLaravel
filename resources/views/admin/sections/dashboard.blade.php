@@ -94,10 +94,7 @@
     </div>
     <!--END CONTENT-->
     <!--BEGIN FOOTER-->
-    <div id="footer">
-        <div class="copyright">
-            <a href="http://lightedcode.com">2014 © LightedCode</a></div>
-    </div>
+    @include('admin.sections.partials.footer')
     <!--END FOOTER-->
 </div>
 @endsection

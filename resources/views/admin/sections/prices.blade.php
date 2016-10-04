@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="page-wrapper">
-        @include('admin.sections.partials.users_header',['header'=>'Blog'])
+        @include('admin.sections.partials.users_header',['header'=>'Prices'])
         <div class="page-content">
             <div id="tab-general">
                 <div class="row mbl">
@@ -15,9 +15,9 @@
 
                     </div>
                     <ul id="generalTab" class="nav nav-tabs responsive">
-                        <li class="active"><a href="#alert-tab" data-toggle="tab">Features</a></li>
+                        <li class="active"><a href="#alert-tab" data-toggle="tab">Price</a></li>
                         @if(Auth::user()->usergroup->name=='Admin')
-                            <li><a href="#note-tab" data-toggle="tab">Add Shapes</a></li>
+                            <li><a href="#note-tab" data-toggle="tab">Add Prices</a></li>
                         @endif
 
 
@@ -26,7 +26,7 @@
                         <div id="alert-tab" class="tab-pane fade in active">
                             <div class="row">
                                 <div class="panel panel-green">
-                                    <div class="panel-heading">Shapes</div>
+                                    <div class="panel-heading">prices</div>
                                     <div class="panel-body">
                                         <!--Displays the users and their levels Admin or writer-->
 
@@ -34,7 +34,8 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Shape</th>
+
+                                                <th>Amount</th>
                                                 @if(Auth::user()->usergroup->name=='Admin')
                                                     <th>Edit/Delete</th>
                                                 @endif
@@ -43,14 +44,13 @@
                                             <tbody>
 
 
-                                            @foreach($shapes as $shape)
+                                            @foreach($prices as $price)
 
                                                 <tr>
-                                                    <td>{!! $shape->id !!}</td>
-                                                    <td>{!! $shape->name !!}</td>
-
+                                                    <td>{!! $price->id !!}</td>
+                                                    <td><span class="label label-sm label-success">{!! $price->amount !!}</span></td>
                                                     @if(Auth::user()->usergroup->name=='Admin')
-                                                        <td><a href="{{url('administrator/shape/'.$shape->id.'/edit')}}">Edit</a> | {!! Form::open(['method' => 'DELETE', 'route' => ['shape.delete', $shape->id]]) !!}
+                                                        <td><a href="{{url('administrator/price/'.$price->id.'/edit')}}">Edit</a> | {!! Form::open(['method' => 'DELETE', 'route' => ['price.delete', $price->id]]) !!}
                                                             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                                                             {!! Form::close()  !!}</td>
                                                     @endif
@@ -66,20 +66,21 @@
                                 </div>
                             </div>
                         </div>
-                        @if(Auth::user()->usergroup->name=="Admin")
-                            <div id="note-tab" class="tab-pane fade">
-                                <div class="row">
-                                    <div class="panel panel-orange">
-                                        <div class="panel-heading">
-                                            Create A Shape</div>
-                                        <div class="panel-body pan">
-                                            {!! Form::open(['route'=>'new_shape']) !!}
-                                            <div class="form-body pal">
-                                                <div class="form-group">
-                                                    <div class="input-icon right">
-                                                        <i class="fa fa-user"></i>
-                                                        {!!Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Enter name'])!!}</div>
-                                                </div>
+                        <div id="note-tab" class="tab-pane fade">
+                            <div class="row">
+                                <div class="panel panel-orange">
+                                    <div class="panel-heading">
+                                        Create A Flavour</div>
+                                    <div class="panel-body pan">
+                                        {!! Form::open(['route'=>'new_price']) !!}
+                                        <div class="form-body pal">
+
+                                            <div class="form-group">
+                                                <div class="input-icon right">
+                                                    <i class="fa fa-envelope"></i>
+                                                    {!!Form::number('amount', null, ['class' => 'form-control', 'placeholder' => 'Enter the Price'])!!}</div>
+                                            </div>
+                                            <div class="form-group">
 
                                             </div>
                                             <div class="form-actions text-right pal">
@@ -93,16 +94,14 @@
                                 </div>
                             </div>
 
+
+
+                        </div>
                     </div>
-                    @endif
-
-
-
                 </div>
             </div>
+            <!--END CONTENT-->
+            <!--BEGIN FOOTER-->
+            @include('admin.sections.partials.footer')
         </div>
-        <!--END CONTENT-->
-        <!--BEGIN FOOTER-->
-        @include('admin.sections.partials.footer')
-    </div>
 @endsection

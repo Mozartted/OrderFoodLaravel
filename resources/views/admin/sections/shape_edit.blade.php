@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="page-wrapper">
-        @include('admin.sections.partials.users_header',['header'=>'Users'])
+        @include('admin.sections.partials.users_header',['header'=>'Shapes'])
         <div class="page-content">
             <div id="tab-general">
                 <div class="row mbl">
@@ -16,7 +16,7 @@
                     </div>
                     <ul id="generalTab" class="nav nav-tabs responsive">
                         @if(Auth::user()->usergroup->name=='Admin')
-                            <li class="active"><a href="#note-tab" data-toggle="tab">Add User</a></li>
+                            <li class="active"><a href="#note-tab" data-toggle="tab">Add Shape</a></li>
                         @endif
                     </ul>
                     <div id="generalTabContent" class="tab-content responsive">
@@ -24,29 +24,14 @@
                             <div class="row">
                                 <div class="panel panel-orange">
                                     <div class="panel-heading">
-                                        Create A User</div>
+                                        Edit Shapes</div>
                                     <div class="panel-body pan">
-                                        {!! Form::model($user,['url' => '/administrator/user/'.$user->id.'/update','method' => 'put']) !!}
+                                        {!! Form::model($shape,['url' => '/administrator/shape/'.$shape->id.'/update','method' => 'put']) !!}
                                         <div class="form-body pal">
                                             <div class="form-group">
                                                 <div class="input-icon right">
                                                     <i class="fa fa-user"></i>
-                                                    {!!Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Enter name'])!!}</div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-icon right">
-                                                    <i class="fa fa-envelope"></i>
-                                                    {!!Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Enter email'])!!}</div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-icon right">
-                                                    <i class="fa fa-lock"></i>
-                                                    {!!Form::password('password', ['class' => 'form-control', 'placeholder' => 'Enter password'])!!}</div>
-                                            </div>
-                                            {!! Form::label('user_group', 'UserGroup') !!}
-                                            <div class="form-controls">
-                                                {!! Form::select('user_group', $user_group, null, ['class' =>
-                                                'form-control']) !!}
+                                                    {!!Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Enter Product\'s name'])!!}</div>
                                             </div>
                                         </div>
                                         <div class="form-actions text-right pal">

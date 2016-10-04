@@ -13,6 +13,8 @@ class Price extends Model
 {
     public $timestamps=false;
 
+    protected $fillable=['amount'];
+
 
     public function product(){
         $this->hasMany('App\Models\Products');

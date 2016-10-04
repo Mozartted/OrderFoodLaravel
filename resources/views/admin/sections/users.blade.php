@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="page-wrapper">
-@include('admin.sections.partials.users_header')
+        @include('admin.sections.partials.users_header',['header'=>'Users'])
 <div class="page-content">
     <div id="tab-general">
         <div class="row mbl">
@@ -290,9 +290,6 @@
 </div>
 <!--END CONTENT-->
 <!--BEGIN FOOTER-->
-<div id="footer">
-    <div class="copyright">
-        <a href="http://themifycloud.com">2014 © KAdmin Responsive Multi-Purpose Template</a></div>
-</div>
+        @include('admin.sections.partials.footer')
 </div>
 @endsection

@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="page-wrapper">
-        @include('admin.sections.partials.users_header',['header'=>'Blog'])
+        @include('admin.sections.partials.users_header',['header'=>'Shapes'])
         <div class="page-content">
             <div id="tab-general">
                 <div class="row mbl">
@@ -81,28 +81,28 @@
                                                         {!!Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Enter name'])!!}</div>
                                                 </div>
 
-                                            </div>
-                                            <div class="form-actions text-right pal">
-                                                {!!Form::submit('Submit', ['class' => 'btn btn-primary form-control'])!!}
+                                                </div>
+                                                <div class="form-actions text-right pal">
+                                                    {!!Form::submit('Submit', ['class' => 'btn btn-primary form-control'])!!}
 
 
+                                                </div>
+                                                {!! Form::close() !!}
                                             </div>
-                                            {!! Form::close() !!}
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
+                        @endif
+
+
 
                     </div>
-                    @endif
-
-
-
                 </div>
             </div>
+            <!--END CONTENT-->
+            <!--BEGIN FOOTER-->
+            @include('admin.sections.partials.footer')
         </div>
-        <!--END CONTENT-->
-        <!--BEGIN FOOTER-->
-        @include('admin.sections.partials.footer')
-    </div>
 @endsection

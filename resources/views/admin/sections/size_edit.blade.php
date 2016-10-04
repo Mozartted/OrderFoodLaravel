@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="page-wrapper">
-        @include('admin.sections.partials.users_header',['header'=>'Users'])
+        @include('admin.sections.partials.users_header',['header'=>'Sizes'])
         <div class="page-content">
             <div id="tab-general">
                 <div class="row mbl">
@@ -16,7 +16,7 @@
                     </div>
                     <ul id="generalTab" class="nav nav-tabs responsive">
                         @if(Auth::user()->usergroup->name=='Admin')
-                            <li class="active"><a href="#note-tab" data-toggle="tab">Add User</a></li>
+                            <li class="active"><a href="#note-tab" data-toggle="tab">Add Size</a></li>
                         @endif
                     </ul>
                     <div id="generalTabContent" class="tab-content responsive">
@@ -24,9 +24,9 @@
                             <div class="row">
                                 <div class="panel panel-orange">
                                     <div class="panel-heading">
-                                        Create A User</div>
+                                        Edit Flavours</div>
                                     <div class="panel-body pan">
-                                        {!! Form::model($user,['url' => '/administrator/user/'.$user->id.'/update','method' => 'put']) !!}
+                                        {!! Form::model($size,['url' => '/administrator/size/'.$size->id.'/update','method' => 'put']) !!}
                                         <div class="form-body pal">
                                             <div class="form-group">
                                                 <div class="input-icon right">
@@ -36,25 +36,18 @@
                                             <div class="form-group">
                                                 <div class="input-icon right">
                                                     <i class="fa fa-envelope"></i>
-                                                    {!!Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Enter email'])!!}</div>
+                                                    {!!Form::number('percent', null, ['class' => 'form-control', 'placeholder' => 'percent'])!!}</div>
                                             </div>
                                             <div class="form-group">
-                                                <div class="input-icon right">
-                                                    <i class="fa fa-lock"></i>
-                                                    {!!Form::password('password', ['class' => 'form-control', 'placeholder' => 'Enter password'])!!}</div>
+
                                             </div>
-                                            {!! Form::label('user_group', 'UserGroup') !!}
-                                            <div class="form-controls">
-                                                {!! Form::select('user_group', $user_group, null, ['class' =>
-                                                'form-control']) !!}
-                                            </div>
-                                        </div>
-                                        <div class="form-actions text-right pal">
-                                            {!!Form::submit('Submit', ['class' => 'btn btn-primary form-control'])!!}
+                                            <div class="form-actions text-right pal">
+                                                {!!Form::submit('Submit', ['class' => 'btn btn-primary form-control'])!!}
 
 
+                                            </div>
+                                            {!! Form::close() !!}
                                         </div>
-                                        {!! Form::close() !!}
                                     </div>
                                 </div>
                             </div>
@@ -62,9 +55,8 @@
                     </div>
                 </div>
             </div>
+            <!--END CONTENT-->
+            <!--BEGIN FOOTER-->
+            @include('admin.sections.partials.footer')
         </div>
-        <!--END CONTENT-->
-        <!--BEGIN FOOTER-->
-        @include('admin.sections.partials.footer')
-    </div>
 @endsection

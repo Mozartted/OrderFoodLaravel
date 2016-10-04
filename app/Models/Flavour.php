@@ -13,7 +13,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Flavour extends Model
 {
-    protected $timestamps=false;
+    public $timestamps=false;
+
+    protected $fillable=['name','percent'];
 
     public function product(){
         $this->hasMany('App\Models\Product');
