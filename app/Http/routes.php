@@ -53,4 +53,6 @@ Route::group(['prefix'=>'administrator','namespace'=>'Admin','middleware'=>'auth
     Route::put('/user/{user}/update',['as'=>'update', 'uses'=>'UserController@update']);
     Route::post('/product/create/',['as'=>'new_product','uses'=>'ProductController@creating']);
     Route::delete('/product/{id}/delete',['as'=>'product.delete','uses'=>'ProductController@deleted']);
+    Route::get('/product/{product}/edit',['as'=>'edit', 'uses'=>'ProductController@edit']);
+    Route::put('/product/{product}/update',['as'=>'update', 'uses'=>'ProductController@update']);
 });

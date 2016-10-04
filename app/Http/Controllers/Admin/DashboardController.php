@@ -11,6 +11,7 @@ use App\UserGroup;
 use App\Models\Product;
 use App\Models\Price;
 use App\Models\Size;
+use App\Models\Feature;
 
 class DashboardController extends Controller
 {
@@ -49,7 +50,7 @@ class DashboardController extends Controller
 
     public function features_view()
     {
-        return view('admin.sections.features');
+        return view('admin.sections.features',['features'=>Feature::all()]);
     }
 
     public function blog_view()
