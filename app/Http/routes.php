@@ -94,4 +94,6 @@ Route::group(['prefix'=>'administrator','namespace'=>'Admin','middleware'=>'auth
     Route::get('/size/{size}/edit',['as'=>'edit', 'uses'=>'SizeController@edit']);
     Route::put('/size/{size}/update',['as'=>'update', 'uses'=>'SizeController@update']);
 
+    Route::get('/blog/new',['as'=>'new_blog','uses'=>'DashboardController@newBlogPost']);
+
 });

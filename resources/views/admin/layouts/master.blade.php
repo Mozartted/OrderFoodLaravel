@@ -5,23 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{{asset('admin/images/icons/favicon.ico')}}">
-    <link rel="apple-touch-icon" href="{{asset('admin/images/icons/favicon.png')}}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{asset('admin/images/icons/favicon-72x72.png')}}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{asset('images/icons/favicon-114x114.png')}}">
-    <!--Loading bootstrap css-->
-    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700">
-    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700,300">
-    <link type="text/css" rel="stylesheet" href="{{asset('admin/styles/jquery-ui-1.10.4.custom.min.css')}}">
-    <link type="text/css" rel="stylesheet" href="{{asset('admin/styles/font-awesome.min.css')}}">
-    <link type="text/css" rel="stylesheet" href="{{asset('admin/styles/bootstrap.min.css')}}">
-    <link type="text/css" rel="stylesheet" href="{{asset('admin/styles/animate.css')}}">
-    <link type="text/css" rel="stylesheet" href="{{asset('admin/styles/all.css')}}">
-    <link type="text/css" rel="stylesheet" href="{{asset('admin/styles/main.css')}}">
-    <link type="text/css" rel="stylesheet" href="{{asset('admin/styles/style-responsive.css')}}">
-    <link type="text/css" rel="stylesheet" href="{{asset('admin/styles/zabuto_calendar.min.css')}}">
-    <link type="text/css" rel="stylesheet" href="{{asset('admin/styles/pace.css')}}">
-    <link type="text/css" rel="stylesheet" href="{{asset('admin/styles/jquery.news-ticker.css')}}">
+    @include('admin.layouts.partials.links_refs')
 </head>
 <body>
 <div>
@@ -71,6 +55,10 @@
         @yield('content')
     </div>
 </div>
-@include('admin.layouts.partials.scripts')
+@if(isset($blog))
+@include('admin.layouts.partials.scripts_jlint')
+@else
+    @include('admin.layouts.partials.scripts')
+@endif
 </body>
 </html>

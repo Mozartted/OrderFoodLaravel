@@ -39,6 +39,13 @@
                     </i><span class="menu-title">Blog</span></a>
 
             </li>
+            @if(isset($blog))
+                <li><a href="{{url('administrator/blog/new')}}"><i class="fa fa-database fa-fw">
+                            <div class="icon-bg bg-red"></div>
+                        </i><span class="menu-title">New Post</span></a>
+                </li>
+            @endif
+
             <li><a href="{{url('administrator/messages')}}"><i class="fa fa-file-o fa-fw">
                         <div class="icon-bg bg-yellow"></div>
                     </i><span class="menu-title">Messages</span></a>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Flavour;
 use App\Models\Icing;
+use App\Models\Post;
 use App\Models\Shape;
 use App\User;
 use Illuminate\Http\Request;
@@ -83,7 +84,7 @@ class DashboardController extends Controller
 
     public function blog_view()
     {
-        return view('admin.sections.blog');
+        return view('admin.sections.blog',['blog'=>true,'posts'=>Post::all()]);
     }
 
     public function messages_view()
@@ -94,6 +95,10 @@ class DashboardController extends Controller
     public function forum_view()
     {
         return view('admin.sections.forum');
+    }
+
+    public function newBlogPost(){
+        return view('admin.sections.new_blog',['new'=>true]);
     }
 
 
