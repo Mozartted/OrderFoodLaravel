@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="page-wrapper">
-        @include('admin.sections.partials.users_header',['header'=>'Blog'])
+        @include('admin.sections.partials.users_header',['header'=>'Gallery'])
         <div class="page-content">
             <div id="tab-general">
                 <div class="row mbl">
@@ -58,35 +58,35 @@
                                                 </div>
                                                 <div class="box text-shadow">
                                                     <table class="demo-tbl">
-                                                        @foreach($posts as $post)
+                                                        @foreach($galleries as $gallery)
 
                                                             <tr class="tbl-item"><!--<img/>-->
-                                                                <td class="img"><img src="{{asset($post->image)}}" alt="" title="" style="height: 200px; width: 250px; background-size: contain"/></td>
+                                                                <td class="img"><img src="{{asset($gallery->pic_location)}}" alt="" title="" style="height: 200px; width: 250px; background-size: contain"/></td>
                                                                 <!--<data></data>-->
-                                                                <td class="td-block"><p class="date">Created {{$post->created_at->diffForHumans()}}</p>
-                                                                    @if($post->created_at!=$post->updated_at)
-                                                                    <p class="date">Updated {{$post->updated_at->diffForHumans()}}</p>
+                                                                <td class="td-block"><p class="date">Created {{$gallery->created_at->diffForHumans()}}</p>
+                                                                    @if($gallery->created_at!=$gallery->updated_at)
+                                                                        <p class="date">Updated {{$gallery->updated_at->diffForHumans()}}</p>
                                                                     @endif
 
 
-                                                                    <p class="title">{{$post->title}}</p>
+                                                                    <p class="title">{{$gallery->title}}</p>
 
-                                                                    <p class="desc">{!! $post->content !!}</p>
+                                                                    <p class="desc">{!! $gallery->note !!}</p>
 
 
 
-                                                                @if(Auth::user()->usergroup->name=='Admin')
-                                                                    <p><a href="{{url('administrator/blog/'.$post->id.'/edit')}}">Edit</a> | {!! Form::open(['method' => 'DELETE', 'route' => ['post.delete', $post->id]]) !!}
-                                                                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                                                                        {!! Form::close()  !!}</p>
-                                                                @endif
+                                                                    @if(Auth::user()->usergroup->name=='Admin')
+                                                                        <p><a href="{{url('administrator/gallery/'.$gallery->id.'/edit')}}">Edit</a> | {!! Form::open(['method' => 'DELETE', 'route' => ['gallery.delete', $gallery->id]]) !!}
+                                                                            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                                                                            {!! Form::close()  !!}</p>
+                                                                    @endif
 
 
                                                                 </td>
 
                                                             </tr>
 
-                                                            @endforeach
+                                                        @endforeach
                                                     </table>
                                                 </div>
                                                 <div class="box jplist-no-results text-shadow align-center"><p>No results found</p></div>

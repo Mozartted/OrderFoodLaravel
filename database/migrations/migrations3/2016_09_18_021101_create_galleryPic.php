@@ -15,6 +15,7 @@ class CreateGalleryPic extends Migration
         Schema::create('gallery', function (Blueprint $table) {
             $table->increments('id');
             $table->string('pic_location');
+            $table->string('title');
             $table->text('note');
             $table->timestamps();
         });
@@ -27,6 +28,6 @@ class CreateGalleryPic extends Migration
      */
     public function down()
     {
-        Schema::drop('products');
+        Schema::drop('gallery');
     }
 }

@@ -24,7 +24,7 @@
                                         <div class="panel-heading">
                                             Write Your Post</div>
                                         <div class="panel-body pan">
-                                            {!! Form::open(['route'=>'new_user']) !!}
+                                            {!! Form::open(['route'=>'new_post','files' => 'true']) !!}
                                                 <div class="form-body pal">
                                                     <div class="row">
                                                         <div class="col-md-4">
@@ -32,7 +32,13 @@
                                                                 {!! Form::label('title','Title',['class'=>'control-label']) !!}
                                                                 <div class="input-icon right">
                                                                     <i class="fa fa-user"></i>
-                                                                    {!!Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Enter the post title'])!!}</div>
+                                                                    {!!Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Enter the post title'])!!}
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                {!!Form::label('image', 'Select A Blog Post Image, something nice!!!')!!}
+                                                                {!!Form::file('image')!!}
+                                                                <p class="help-block">Please select an image.</p>
                                                             </div>
                                                         </div>
 

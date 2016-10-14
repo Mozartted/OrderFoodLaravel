@@ -9,8 +9,12 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class Gallery
+class Gallery extends Model
 {
 
+    protected $fillable=['title','pic_location','note'];
     protected $table='gallery';
+
+
+
 }

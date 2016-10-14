@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Flavour;
+use App\Models\Gallery;
 use App\Models\Icing;
 use App\Models\Post;
 use App\Models\Shape;
@@ -84,8 +85,14 @@ class DashboardController extends Controller
 
     public function blog_view()
     {
-        return view('admin.sections.blog',['blog'=>true,'posts'=>Post::all()]);
+        return view('admin.sections.blog',['blog'=>true,'posts'=>Post::orderBy('id','desc')->get()]);
     }
+
+    public function gallery_view()
+    {
+        return view('admin.sections.gallery',['gallery'=>true,'galleries'=>Gallery::orderBy('id','desc')->get()]);
+    }
+
 
     public function messages_view()
     {
@@ -98,7 +105,11 @@ class DashboardController extends Controller
     }
 
     public function newBlogPost(){
-        return view('admin.sections.new_blog',['new'=>true]);
+        return view('admin.sections.new_blog',['new'=>true,'blog'=>true]);
+    }
+
+    public function newGalleryPost(){
+        return view('admin.sections.new_gallery',['new'=>true,'gallery'=>true]);
     }
 
 

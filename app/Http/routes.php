@@ -51,6 +51,7 @@ Route::group(['prefix'=>'administrator','namespace'=>'Admin','middleware'=>'auth
 
     Route::get('/orders',['as'=>'orders_admin','uses'=>'DashboardController@orders_view']);
     Route::get('/blog',['as'=>'blog_admin','uses'=>'DashboardController@blog_view']);
+    Route::get('/gallery',['as'=>'gallery_admin','uses'=>'DashboardController@gallery_view']);
     Route::get('/messages',['as'=>'messages_admin','uses'=>'DashboardController@messages_view']);
     Route::get('/forum',['as'=>'forum_admin','uses'=>'DashboardController@forum_view']);
 
@@ -95,5 +96,17 @@ Route::group(['prefix'=>'administrator','namespace'=>'Admin','middleware'=>'auth
     Route::put('/size/{size}/update',['as'=>'update', 'uses'=>'SizeController@update']);
 
     Route::get('/blog/new',['as'=>'new_blog','uses'=>'DashboardController@newBlogPost']);
+    Route::post('/blog/create/',['as'=>'new_post','uses'=>'BlogController@creating']);
+    Route::delete('/blog/{id}/delete',['as'=>'post.delete','uses'=>'BlogController@deleted']);
+    Route::get('/blog/{post}/edit',['as'=>'edit', 'uses'=>'BlogController@edit']);
+    Route::put('/blog/{post}/update',['as'=>'update', 'uses'=>'BlogController@update']);
+
+
+    //the gallery section Views
+    Route::get('/gallery/new',['as'=>'new_blog','uses'=>'DashboardController@newGalleryPost']);
+    Route::post('/gallery/create/',['as'=>'new_gallery','uses'=>'GalleryController@creating']);
+    Route::delete('/gallery/{id}/delete',['as'=>'gallery.delete','uses'=>'GalleryController@deleted']);
+    Route::get('/gallery/{gallery}/edit',['as'=>'edit', 'uses'=>'GalleryController@edit']);
+    Route::put('/gallery/{gallery}/update',['as'=>'update', 'uses'=>'GalleryController@update']);
 
 });

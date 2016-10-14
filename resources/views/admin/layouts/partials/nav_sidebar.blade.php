@@ -46,9 +46,21 @@
                 </li>
             @endif
 
+            @if(isset($gallery))
+                <li><a href="{{url('administrator/gallery/new')}}"><i class="fa fa-database fa-fw">
+                            <div class="icon-bg bg-red"></div>
+                        </i><span class="menu-title">Add New Gallery</span></a>
+                </li>
+            @endif
+
             <li><a href="{{url('administrator/messages')}}"><i class="fa fa-file-o fa-fw">
                         <div class="icon-bg bg-yellow"></div>
                     </i><span class="menu-title">Messages</span></a>
+
+            </li>
+            <li><a href="{{url('administrator/gallery')}}"><i class="fa fa-file-o fa-fw">
+                        <div class="icon-bg bg-light-gray"></div>
+                    </i><span class="menu-title">Gallery</span></a>
 
             </li>
             <li><a href="{{url('administrator/forum')}}"><i class="fa fa-gift fa-fw">

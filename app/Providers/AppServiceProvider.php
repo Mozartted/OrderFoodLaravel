@@ -25,6 +25,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(
+            'ProcessImage',
+            'App\Services\ProcessImage'
+        );
     }
 }

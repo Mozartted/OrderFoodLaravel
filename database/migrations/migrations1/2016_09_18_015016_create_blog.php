@@ -16,6 +16,7 @@ class CreateBlog extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('content');
+            $table->char('image');
             $table->timestamps();
         });
     }

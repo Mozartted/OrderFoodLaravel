@@ -15,18 +15,30 @@
 <link type="text/css" rel="stylesheet" href="{{asset('admin/styles/zabuto_calendar.min.css')}}">
 <link type="text/css" rel="stylesheet" href="{{asset('admin/styles/pace.css')}}">
 <link type="text/css" rel="stylesheet" href="{{asset('admin/styles/jquery.news-ticker.css')}}">
-@if(isset($blog))
+@if((isset($blog))||(isset($gallery)))
     <link type="text/css" rel="stylesheet" href="{{asset('admin/styles/jplist-custom.css')}}">
-
 @endif
 
-@if(isset($new))
+@if(isset($new)&&isset($blog))
     <script src="{{asset('admin/script/tinymce/tinymce.min.js')}}"></script>
     <script type="text/javascript">
         tinymce.init({
             selector: '.blog',  // change this value according to your HTML
             menubar: 'file edit tools',
             height:500,
+            skin: "mozart"
+        });
+
+    </script>
+@endif
+
+@if(isset($new)&&isset($gallery))
+    <script src="{{asset('admin/script/tinymce/tinymce.min.js')}}"></script>
+    <script type="text/javascript">
+        tinymce.init({
+            selector: '.gallery',  // change this value according to your HTML
+            menubar: 'file edit tools',
+            height:200,
             skin: "mozart"
         });
 
