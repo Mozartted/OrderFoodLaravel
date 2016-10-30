@@ -1,6 +1,9 @@
-RebirthLaravel
+#RebirthLaravel
 
-A cake ordering site structure constructed with laravel
+###A cake ordering site structure constructed with laravel
+RebirthLaravel is a site project built of laravel, it emulates an ordering system for a cake ordering site....
+
+>Just do it (For the love of Cake)
 
 ## License
 
