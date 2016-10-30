@@ -11,6 +11,15 @@ var elixir = require('laravel-elixir');
  |
  */
 
+ /*
+  |--------------------------------------------------------------------------
+  | Rebirth Gulp file
+  |--------------------------------------------------------------------------
+  |
+  | Not really sure what it would do yet...would figure it out later
+  |
+  */
+
 elixir(function(mix) {
     mix.sass('app.scss');
 });

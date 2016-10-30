@@ -24,7 +24,7 @@ class ViewsController extends Controller
     }
 
     public function gallery(){
-        return view('sections.galleria')-with(gallery);
+        return view('sections.galleria',['gallery'=>Gallery::all()]);
     }
 
     public function about(){
