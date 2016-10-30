@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\Gallery;
 
 class ViewsController extends Controller
 {
@@ -23,7 +24,7 @@ class ViewsController extends Controller
     }
 
     public function gallery(){
-        return view('sections.galleria');
+        return view('sections.galleria')-with(gallery);
     }
 
     public function about(){
